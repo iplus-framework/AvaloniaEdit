@@ -1,9 +1,13 @@
 <Project>
+  <!-- iPlus settings and overrides -->
+  <Import Project="../iPlus/build/Avalonia.Build.props" />
+  <!-- End iPlus settings and overrides -->
+
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AvaloniaVersion>11.0.0</AvaloniaVersion>
-    <AvaloniaSampleVersion>11.3.0</AvaloniaSampleVersion>
+    <AvaloniaVersion Condition="'$(AvaloniaVersion)' == ''">11.3.8</AvaloniaVersion>
+    <AvaloniaSampleVersion Condition="'$(AvaloniaVersion)' == ''">11.3.8</AvaloniaSampleVersion>
     <TextMateSharpVersion>1.0.66</TextMateSharpVersion>
     <VersionSuffix>beta</VersionSuffix>
 
@@ -30,6 +34,6 @@
     <None Include="$(MSBuildThisFileDirectory)/Icon.png" Pack="true" Visible="false" PackagePath=""/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+    <PackageReference Condition="'$(UseAvaloniaFork)' == 'False'" Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
