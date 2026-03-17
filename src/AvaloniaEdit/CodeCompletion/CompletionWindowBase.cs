@@ -116,7 +116,6 @@ namespace AvaloniaEdit.CodeCompletion
 
             Open();
             Height = double.NaN;
-            MinHeight = 0;
         }
 
         public void Hide()
