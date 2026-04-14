@@ -98,7 +98,7 @@ namespace AvaloniaEdit.CodeCompletion
             var description = item?.Description;
             
     
-            if (description != null && Host is Control placementTarget && CompletionList.CurrentList != null)
+            if (description != null && TopLevel.GetTopLevel(CompletionList) is Control placementTarget && CompletionList.CurrentList != null)
             {
                 _toolTipContent.Content = description;
 
@@ -223,7 +223,7 @@ namespace AvaloniaEdit.CodeCompletion
 
         private void CaretPositionChanged(object sender, EventArgs e)
         {
-            var offset = TextArea.Caret.Offset;
+           var offset = TextArea.Caret.Offset;
             if (offset == StartOffset)
             {
                 if (CloseAutomatically && CloseWhenCaretAtBeginning)

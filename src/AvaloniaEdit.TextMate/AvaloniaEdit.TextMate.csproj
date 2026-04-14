@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!--<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>-->
-    <TargetFrameworks>net8.0</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <PackageDescription>TextMate integration for AvaloniaEdit.</PackageDescription>
   </PropertyGroup>
 
@@ -11,7 +9,7 @@
     <ProjectReference Include="..\AvaloniaEdit\AvaloniaEdit.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
+  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False' OR '$(TargetFramework)' == 'net8.0'">
     <PackageReference Include="Avalonia" />
   </ItemGroup>
   
@@ -21,7 +19,7 @@
   </ItemGroup>
 
   <!-- iPlus settings and overrides -->
-  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="../../../iPlus/build/AvaloniaInclude.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True' AND '$(TargetFramework)' == 'net10.0'" Project="../../../iPlus/build/AvaloniaInclude.props" />
   <!-- End iPlus settings and overrides -->
 
 

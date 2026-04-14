@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <!--<TargetFramework>net6.0</TargetFramework>-->
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
@@ -12,7 +12,7 @@
     <PackageReference Include="Avalonia.Themes.Simple" />
     <PackageReference Include="Avalonia.Headless.NUnit" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk"/>
     <PackageReference Include="Moq"/>

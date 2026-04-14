@@ -2,40 +2,24 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64</RuntimeIdentifiers>
-    <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <TargetFramework>net10.0</TargetFramework>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**\*.cs" Exclude="obj\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="**\*.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <AvaloniaResource Include="Assets\**" />
-    <AvaloniaResource Include="**\*.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\SampleFiles\**\*" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Resources\SampleFiles\source.cs" />
+    <Compile Remove="Resources\SampleFiles\**\*.*" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Desktop"  />
     <PackageReference Include="Avalonia.Themes.Fluent" />
-    <PackageReference Include="Avalonia.Diagnostics" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
   </ItemGroup>
 
   <ItemGroup>
