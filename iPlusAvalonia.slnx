@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="AvaloniaInclude.props" />
+    <File Path="azure-pipelines.yml" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="src/AvaloniaEdit.TextMate/AvaloniaEdit.TextMate.csproj" />
+  <Project Path="src/AvaloniaEdit/AvaloniaEdit.csproj" />
+</Solution>
